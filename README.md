@@ -2,11 +2,11 @@
 Sinopia is a private npm repository server. This version uploads its npm packages into an S3 bucket for easy (and automatic) backup.
 
 ## Pulling docker-hub image
-` docker pull ndigati/docker-sinopia `
+` docker pull ind9/docker-sinopia `
 
 ## Create container
 ```
- docker run --name sinopia -d -e AWS_ACCESS_KEY_ID=<fill-in> -e AWS_SECRET_ACCESS_KEY=<fill-in> -e SINOPIA_BUCKET=<fill-in> -p 4873:4873 sinopia 
+ docker run --name sinopia -d -e SINOPIA_BUCKET=<fill-in> -e SINOPIA_CONFIG=<fill-in> -p 4873:4873 sinopia 
 ```
 
 
