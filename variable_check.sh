@@ -13,6 +13,9 @@ fi
 
 # Get config file
 # If you want to pull the config from somewhere else
+echo $SINOPIA_CONFIG
+echo $SINOPIA_BUCKET
+
 aws s3 cp $SINOPIA_CONFIG /home/config.yaml
 # echo "Received sinopia config:"
 cat /home/config.yaml
