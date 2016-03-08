@@ -13,9 +13,7 @@ fi
 
 # Get config file
 # If you want to pull the config from somewhere else
-# Otherwise comment this out the curl command
-curl -s $SINOPIA_CONFIG > /home/config.yaml
-
+aws s3 cp $SINOPIA_CONFIG /home/config.yaml
 # echo "Received sinopia config:"
 cat /home/config.yaml
 
