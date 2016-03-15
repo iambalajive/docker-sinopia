@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x -e
 
 # Abort if the SINOPIA_BUCKET was not provided
 if [ -z $SINOPIA_BUCKET ]; then
