@@ -3,12 +3,12 @@ MAINTAINER Nicholas Digati <nicholas@factual.com>
 
 WORKDIR /home/
 
-RUN curl https://deb.nodesource.com/setup_0.12 | bash - && \
-  apt-get --no-install-recommends -y install nodejs npm python3-pip python3-setuptools && \
+RUN curl https://deb.nodesource.com/setup_7.x | bash - && \
+  apt-get --no-install-recommends -y install nodejs python3-pip python3-setuptools && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
   mkdir -p /etc/service/sinopia/ /etc/my_init.d/ /home/bucket
 
-RUN npm install js-yaml sinopia && \
+RUN npm install js-yaml verdaccio && \
   pip3 install --upgrade pip && \
   pip3 install awscli
 
