@@ -4,13 +4,12 @@ MAINTAINER Nicholas Digati <nicholas@factual.com>
 WORKDIR /home/
 
 RUN curl https://deb.nodesource.com/setup_0.12 | bash - && \
-  apt-get update && \
-  apt-get --no-install-recommends -y install nodejs\
-    build-essential python python3-pip && \
+  apt-get --no-install-recommends -y install nodejs npm python3-pip python3-setuptools && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
   mkdir -p /etc/service/sinopia/ /etc/my_init.d/ /home/bucket
 
-RUN npm install js-yaml sinopia --no-optional --no-shrinkwrap && \
+RUN npm install js-yaml sinopia && \
+  pip3 install --upgrade pip && \
   pip3 install awscli
 
 COPY variable_check.sh /home/variable_check.sh
